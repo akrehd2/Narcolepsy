@@ -8,8 +8,10 @@ public class Player : MonoBehaviour
     Rigidbody rigid;
     SpriteRenderer spriteRenderer;
 
+    public Fade fade;
     public GameObject[] cam;
     public Sprite[] sprites = new Sprite[2];
+
     public bool run = false;
     public float HP = 100.0f;
     public float score = 0.0f;
@@ -18,9 +20,8 @@ public class Player : MonoBehaviour
     public float speed = 10.0f; // 이동 속도
 
     public float stunTime;
-    public float sleepTime;
+    public float stunCool;
     public bool stun = false;
-    public bool sleep = false;
 
     public TextMesh text;
 
@@ -30,10 +31,11 @@ public class Player : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        fade = GameObject.Find("FadeImage").GetComponent<Fade>();
         //text.text = score.ToString();
 
         stunTime = Random.Range(1, 5);
-        sleepTime = Random.Range(1, 2);
 }
 
     void Update()
@@ -111,30 +113,10 @@ public class Player : MonoBehaviour
             stun = true;
         }
 
-        if (sleepTime > 0)
+        if(stun)
         {
-            sleepTime -= 1 * Time.deltaTime;
-        }
-        else if (sleepTime <= 0)
-        {
-            sleep = false;
-        }
-
-        if (stun)
-        {
-            sleepTime = Random.Range(1, 2);
-            sleep = true;
+            fade.Fading = true;
             stun = false;
-        }
-        else if(sleep)
-        {
-            cam[0].SetActive(false);
-            cam[1].SetActive(false);
-        }
-        else if(!stun && !sleep)
-        {
-            cam[0].SetActive(true);
-            cam[1].SetActive(true);
         }
     }
 
