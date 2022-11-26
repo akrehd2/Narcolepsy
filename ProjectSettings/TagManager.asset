@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Potal
   - Floor
+  - Chair
   layers:
   - Default
   - TransparentFX
