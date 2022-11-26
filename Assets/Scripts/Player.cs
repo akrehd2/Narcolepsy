@@ -8,10 +8,12 @@ public class Player : MonoBehaviour
     Rigidbody rigid;
     SpriteRenderer spriteRenderer;
 
+    public GameObject Image;
     public Fade fade;
     public GameObject[] cam;
     public Sprite[] sprites = new Sprite[2];
 
+    public bool jump = false;
     public bool run = false;
     public float HP = 100.0f;
     public float score = 0.0f;
@@ -21,7 +23,9 @@ public class Player : MonoBehaviour
 
     public float stunTime;
     public float stunCool;
+    public float bindTime;
     public bool stun = false;
+    public bool bind = false;
 
     public TextMesh text;
 
@@ -29,6 +33,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Image.gameObject.SetActive(true);
         rigid = GetComponent<Rigidbody>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -43,6 +48,7 @@ public class Player : MonoBehaviour
         MouseRotation();
         Ani();
         Narcolepsy();
+        Jump();
     }
 
     void FixedUpdate()
@@ -72,22 +78,28 @@ public class Player : MonoBehaviour
     void KeyboardMove()
     {
         // WASD 키 또는 화살표키의 이동량을 측정
-        Vector3 dir = new Vector3(
-            Input.GetAxis("Horizontal"),
-            0,
-            Input.GetAxis("Vertical")
-        );
+        Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         // 이동방향 * 속도 * 프레임단위 시간을 곱해서 카메라의 트랜스폼을 이동
         transform.Translate(dir * speed * Time.deltaTime);
 
-        if(dir != Vector3.zero)
+        if (dir != Vector3.zero)
         {
             run = true;
         }
         else
         {
             run = false;
-        }    
+        }
+    }
+
+    void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && jump == false)
+        {
+            rigid.AddForce(Vector3.up * 8f, ForceMode.Impulse);
+
+            jump = true;
+        }
     }
 
     void Ani()
@@ -117,6 +129,14 @@ public class Player : MonoBehaviour
         {
             fade.Fading = true;
             stun = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            jump = false;
         }
     }
 

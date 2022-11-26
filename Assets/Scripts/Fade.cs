@@ -36,7 +36,7 @@ public class Fade : MonoBehaviour
 
     private IEnumerator fade(float start, float end)
     {
-        float currentTime = Random.Range(-3f, -5.0f);
+        float currentTime = Random.Range(-5f, -10.0f);
         float percent = 0.0f;
 
         while(percent<1)
@@ -56,7 +56,7 @@ public class Fade : MonoBehaviour
             }
             else if(FadeOut && player.stunTime <= 0)
             {
-                player.stunTime = Random.Range(3, 5);
+                player.stunTime = Random.Range(3, 8);
                 Fading = false;
             }
             else if(player.stunTime > 0)
