@@ -6,11 +6,21 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     Rigidbody rigid;
+    SpriteRenderer spriteRenderer;
+
+    public GameObject[] cam;
+    public Sprite[] sprites = new Sprite[2];
+    public bool run = false;
     public float HP = 100.0f;
     public float score = 0.0f;
 
     public float turnSpeed = 4.0f; // 마우스 회전 속도
     public float speed = 10.0f; // 이동 속도
+
+    public float stunTime;
+    public float sleepTime;
+    public bool stun = false;
+    public bool sleep = false;
 
     public TextMesh text;
 
@@ -19,12 +29,22 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         //text.text = score.ToString();
-    }
+
+        stunTime = Random.Range(1, 5);
+        sleepTime = Random.Range(1, 2);
+}
 
     void Update()
     {
         MouseRotation();
+        Ani();
+        Narcolepsy();
+    }
+
+    void FixedUpdate()
+    {
         KeyboardMove();
     }
 
@@ -57,6 +77,65 @@ public class Player : MonoBehaviour
         );
         // 이동방향 * 속도 * 프레임단위 시간을 곱해서 카메라의 트랜스폼을 이동
         transform.Translate(dir * speed * Time.deltaTime);
+
+        if(dir != Vector3.zero)
+        {
+            run = true;
+        }
+        else
+        {
+            run = false;
+        }    
+    }
+
+    void Ani()
+    {
+        if(run)
+        {
+            spriteRenderer.sprite = sprites[1];
+        }
+        else if(!run)
+        {
+            spriteRenderer.sprite = sprites[0];
+        }
+    }
+
+    void Narcolepsy()
+    {
+        if(stunTime > 0)
+        {
+            stunTime -= 1 * Time.deltaTime;
+        }
+        else if(stunTime <= 0)
+        {
+            stun = true;
+        }
+
+        if (sleepTime > 0)
+        {
+            sleepTime -= 1 * Time.deltaTime;
+        }
+        else if (sleepTime <= 0)
+        {
+            sleep = false;
+        }
+
+        if (stun)
+        {
+            sleepTime = Random.Range(1, 2);
+            sleep = true;
+            stun = false;
+        }
+        else if(sleep)
+        {
+            cam[0].SetActive(false);
+            cam[1].SetActive(false);
+        }
+        else if(!stun && !sleep)
+        {
+            cam[0].SetActive(true);
+            cam[1].SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
