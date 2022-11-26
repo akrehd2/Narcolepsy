@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -142,6 +143,11 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Potal")
+        {
+            SceneManager.LoadScene("Stage2_cutScene");
+        }
+
         if (other.gameObject.tag == "Item_ScoreDOWN")
         {
             Destroy(other.gameObject);
