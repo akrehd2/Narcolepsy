@@ -7,7 +7,6 @@ public class MultiCamera : MonoBehaviour
     public GameObject player;
     public Camera firstperson;
     public Camera thirdperson;
-    bool cam_check = false;
     public float width;
     public float height;
 
