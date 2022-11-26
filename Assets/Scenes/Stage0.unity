@@ -3256,7 +3256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC544\uD508 \uBE44\uBC84\uB97C \uB3C4\uC640\uC918"
+  m_text: "\uC878\uB9B0 \uBE44\uBC84\uB97C \uB3C4\uC640\uC918!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e432254c2068ea42a19b30127254872, type: 2}
   m_sharedMaterial: {fileID: 6159070805743176402, guid: 7e432254c2068ea42a19b30127254872,
@@ -5117,37 +5117,37 @@ PrefabInstance:
     - target: {fileID: 1931790379571789846, guid: fca24ce5a8bd0f045b4fff5e547760f5,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.85626197
+      value: 0.8105191
       objectReference: {fileID: 0}
     - target: {fileID: 1931790379571789846, guid: fca24ce5a8bd0f045b4fff5e547760f5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.10807067
+      value: -0.29013738
       objectReference: {fileID: 0}
     - target: {fileID: 1931790379571789846, guid: fca24ce5a8bd0f045b4fff5e547760f5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.49939543
+      value: -0.47555378
       objectReference: {fileID: 0}
     - target: {fileID: 1931790379571789846, guid: fca24ce5a8bd0f045b4fff5e547760f5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.075765096
+      value: -0.18090802
       objectReference: {fileID: 0}
     - target: {fileID: 1931790379571789846, guid: fca24ce5a8bd0f045b4fff5e547760f5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 359.9452
+      value: 320.03
       objectReference: {fileID: 0}
     - target: {fileID: 1931790379571789846, guid: fca24ce5a8bd0f045b4fff5e547760f5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 359.9734
+      value: 299.668
       objectReference: {fileID: 0}
     - target: {fileID: 1931790379571789846, guid: fca24ce5a8bd0f045b4fff5e547760f5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.09389929
+      value: -1.294
       objectReference: {fileID: 0}
     - target: {fileID: 1931790379571789847, guid: fca24ce5a8bd0f045b4fff5e547760f5,
         type: 3}
