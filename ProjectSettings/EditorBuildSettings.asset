@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage2_cutScene.unity
     guid: 367075718344e9a489843ea2df9cb764
   - enabled: 1
-    path: Assets/Scenes/Stage3.unity
+    path: Assets/Scenes/Stage4_hospitalScene.unity
     guid: be3d65cb5fcdb1348b8d3237bee93fec
   m_configObjects: {}
