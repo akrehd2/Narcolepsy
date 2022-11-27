@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     public GameObject Image;
     public GameObject over;
+    public MainCamera Cam;
     public Fade fade;
     public GameObject[] cam;
     public Sprite[] sprites = new Sprite[2];
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        Cam = GameObject.Find("Main Camera").GetComponent<MainCamera>();
         fade = GameObject.Find("FadeImage").GetComponent<Fade>();
         //text.text = score.ToString();
 
@@ -146,6 +148,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("obastacle"))
         {
             over.gameObject.SetActive(true);
+            Cam.Hit = true;
             audioSource.Play();
         }
     }
