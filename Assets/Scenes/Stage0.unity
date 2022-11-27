@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19559151, g: 0.23698464, b: 0.31058577, a: 1}
+  m_IndirectSpecularColor: {r: 0.19557694, g: 0.23695657, b: 0.310541, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3256,7 +3256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC878\uB9B0 \uBE44\uBC84\uB97C \uB3C4\uC640\uC918!"
+  m_text: "      Narcolepsy\n\n\uC878\uB9B0 \uBE44\uBC84\uB97C \uB3C4\uC640\uC918!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e432254c2068ea42a19b30127254872, type: 2}
   m_sharedMaterial: {fileID: 6159070805743176402, guid: 7e432254c2068ea42a19b30127254872,
