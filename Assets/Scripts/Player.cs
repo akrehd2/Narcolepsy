@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     public GameObject Image;
+    public GameObject over;
     public Fade fade;
     public GameObject[] cam;
     public Sprite[] sprites = new Sprite[2];
@@ -138,6 +139,11 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Floor"))
         {
             jump = false;
+        }
+
+        if (other.gameObject.CompareTag("obastacle"))
+        {
+            over.gameObject.SetActive(true);
         }
     }
 
