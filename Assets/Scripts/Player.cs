@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    AudioSource audioSource;
     Rigidbody rigid;
     SpriteRenderer spriteRenderer;
 
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
         Image.gameObject.SetActive(true);
         rigid = GetComponent<Rigidbody>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -144,6 +146,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("obastacle"))
         {
             over.gameObject.SetActive(true);
+            audioSource.Play();
         }
     }
 
