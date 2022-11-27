@@ -13,7 +13,7 @@ public class snd : MonoBehaviour
     {
         audioSource = gameObject.GetComponent<AudioSource>();
 
-        time = Random.Range(5f, 15f);
+        time = Random.Range(10f, 20f);
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class snd : MonoBehaviour
         }
         else if(time <= -2f)
         {
-            time = Random.Range(5f, 15f);
+            time = Random.Range(10f, 20f);
             doo = false;
         }
 

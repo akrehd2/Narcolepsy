@@ -167,6 +167,11 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("Stage5_enteringCutScene");
         }
 
+        if (other.gameObject.tag == "Potal2")
+        {
+            SceneManager.LoadScene("Stage4_hospitalScene");
+        }
+
         if (other.gameObject.tag == "Potal")
         {
             SceneManager.LoadScene("Stage2_cutScene");
