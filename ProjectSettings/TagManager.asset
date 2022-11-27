@@ -8,6 +8,8 @@ TagManager:
   - Floor
   - Chair
   - obastacle
+  - door
+  - next
   layers:
   - Default
   - TransparentFX

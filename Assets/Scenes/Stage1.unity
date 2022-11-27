@@ -3799,7 +3799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4353972167979376, guid: 6717c7c2d677a9f439f502029ec5b22a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -67.16684
+      value: -44.1
       objectReference: {fileID: 0}
     - target: {fileID: 4353972167979376, guid: 6717c7c2d677a9f439f502029ec5b22a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5761,8 +5761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 4
-  minX: -83
-  maxX: -23
+  minX: -80
+  maxX: -20
   moveSpeed: 43.8
 --- !u!65 &1805118010
 BoxCollider:
@@ -5775,8 +5775,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 3.5257244}
-  m_Center: {x: 2.3750578e-11, y: 0, z: 0.73235863}
+  m_Size: {x: 1, y: 1, z: 4.004126}
+  m_Center: {x: -1.2189035e-13, y: 0, z: -0.11217594}
 --- !u!1 &1825784217
 GameObject:
   m_ObjectHideFlags: 0

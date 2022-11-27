@@ -149,6 +149,21 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Chair")
+        {
+            SceneManager.LoadScene("Stage7_diagnosis");
+        }
+
+        if (other.gameObject.tag == "next")
+        {
+            SceneManager.LoadScene("Stage6_inHospital");
+        }
+
+        if (other.gameObject.tag == "door")
+        {
+            SceneManager.LoadScene("Stage5_enteringCutScene");
+        }
+
         if (other.gameObject.tag == "Potal")
         {
             SceneManager.LoadScene("Stage2_cutScene");
